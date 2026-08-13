@@ -1,17 +1,4 @@
-import {initializeApp} from 'https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js';
-import {getAuth,GoogleAuthProvider,signInWithPopup} from 'https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js';
-import {getFirestore,collection,addDoc} from 'https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js';
-import {firebaseConfig} from './firebase-config.js';
-
-const app=initializeApp(firebaseConfig);
-const auth=getAuth(app);
-const db=getFirestore(app);
-
-document.getElementById('loginBtn').onclick=()=>signInWithPopup(auth,new GoogleAuthProvider());
-
-document.getElementById('saveBtn').onclick=async()=>{
- await addDoc(collection(db,'capsules'),{
-  title:title.value,message:message.value,createdAt:new Date()
- });
- status.textContent='Capsule saved!';
-};
+function showPage(p){document.querySelectorAll('.page').forEach(x=>x.classList.add('hidden'));document.getElementById(p).classList.remove('hidden');if(p==='vault')loadVault();}
+document.getElementById('notify').onclick=()=>{'Notification'in window&&Notification.requestPermission()};
+function sealCapsule(){const c={title:title.value,message:message.value,date:date.value,password:password.value,shared:shared.value};const a=JSON.parse(localStorage.getItem('tizu')||'[]');a.push(c);localStorage.setItem('tizu',JSON.stringify(a));alert('Capsule sealed!')}
+function loadVault(){vaultList.innerHTML='';JSON.parse(localStorage.getItem('tizu')||'[]').forEach(c=>{const days=c.date?Math.max(0,Math.floor((new Date(c.date)-new Date())/86400000)):0;vaultList.innerHTML+=`<div class='card'><h3>${c.title}</h3><p>⏳ ${days} days remaining</p><p>👥 ${c.shared||'Private'}</p></div>`})}

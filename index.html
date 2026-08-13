@@ -1,16 +1,1 @@
-<!DOCTYPE html>
-<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>TIZU v3.1 Pro</title>
-<link rel="stylesheet" href="style.css">
-</head><body>
-<div class="container">
-<h1>TIZU v3.1 Pro</h1>
-<p>Digital Time Capsule</p>
-<button id="loginBtn">Sign in with Google</button>
-<input id="title" placeholder="Capsule title">
-<textarea id="message" placeholder="Write your message"></textarea>
-<button id="saveBtn">Save Capsule</button>
-<div id="status"></div>
-</div>
-<script type="module" src="app.js"></script>
-</body></html>
+<!DOCTYPE html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>TIZU Modern</title><link rel='stylesheet' href='style.css'></head><body><div class='container'><h1>TIZU</h1><p>Your Digital Time Capsule</p><div id='home' class='page card'><button id='notify'>Enable Notifications</button><input id='title' placeholder='Capsule title'><textarea id='message' placeholder='Write your capsule'></textarea><input id='date' type='datetime-local'><input id='password' type='password' placeholder='Password'><input id='shared' placeholder='Share with friends/family'><input type='file' multiple><button onclick='sealCapsule()'>[ Seal Capsule ]</button></div><div id='about' class='page card hidden'><h2>About</h2><p>Store memories for the future.</p></div><div id='reviews' class='page card hidden'><h2>Reviews</h2><p>⭐⭐⭐⭐⭐ Modern memory storage.</p></div><div id='account' class='page card hidden'><h2>Account</h2><p>Google/Firebase ready.</p></div><div id='vault' class='page card hidden'><h2>Vault</h2><div id='vaultList'></div></div></div><div class='nav'><button onclick="showPage('home')">🏠</button><button onclick="showPage('about')">ℹ️</button><button onclick="showPage('reviews')">⭐</button><button onclick="showPage('account')">👤</button><button onclick="showPage('vault')">🗄️</button></div><script src='app.js'></script></body></html>

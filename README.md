@@ -1,1 +1,1 @@
-# TIZU-digital-time-capsule-
+Demo version with modern UI, local storage, notifications, countdown and vault.
