@@ -1,1 +1,34 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>TIZU</title><link rel='stylesheet' href='style.css'></head><body><div class='container'><h1>TIZU</h1><button id='login'>Sign in with Google</button><div class='card'><input id='title' placeholder='Capsule title'><textarea id='message' placeholder='Write your capsule'></textarea><button id='save'>[ Seal Capsule ]</button></div><div class='card'><h2>Customer Reviews</h2><textarea id='reviewText' placeholder='Write a review'></textarea><button id='addReview'>Submit Review</button><div id='reviews'></div></div></div><script type='module' src='app.js'></script></body></html>
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TIZU GitHub Edition</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<div class="container">
+<h1>TIZU</h1><p>Your Digital Time Capsule</p>
+
+<div id="home" class="page card">
+<button id="loginBtn">Sign in with Google</button>
+<p id="user">Not signed in</p>
+<input id="title" placeholder="Capsule title">
+<textarea id="message" placeholder="Write your capsule"></textarea>
+<input id="date" type="datetime-local">
+<input id="shared" placeholder="Share with friends/family">
+<button id="seal">[ Seal Capsule ]</button>
+</div>
+
+<div id="reviews" class="page card hidden">
+<h2>Reviews</h2>
+<textarea id="reviewText" placeholder="Write a review"></textarea>
+<button id="reviewBtn">Submit Review</button>
+<div id="reviewList"></div>
+</div>
+
+<div id="vault" class="page card hidden"><h2>Vault</h2><div id="vaultList"></div></div>
+
+<nav class="nav">
+<button data-page="home">🏠</button>
+<button data-page="reviews">⭐</button>
+<button data-page="vault">🗄️</button>
+</nav>
+</div>
+<script type="module" src="app.js"></script>
+</body></html>

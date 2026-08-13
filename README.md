@@ -1,1 +1,1 @@
-Demo version with modern UI, local storage, notifications, countdown and vault.
+Upload all files to a GitHub repository and enable GitHub Pages. Enable Google Sign-In and Firestore in Firebase.
